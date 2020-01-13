@@ -1,5 +1,4 @@
 import React from 'react';
-
 import axios from 'axios';
 
 export default class Github extends React.Component {
@@ -16,21 +15,20 @@ export default class Github extends React.Component {
       })
   }
 
-  pushEvents() {
+  pushEvents = () => {
     let pushEvents = [];
     this.state.responseData.forEach(event => {
       if (event.type === "PushEvent") {
-        pushEvents.push(event.created_at);
+        pushEvents.push(new Date(event.created_at).toDateString());
       }
     });
-    console.log(pushEvents);
+    return pushEvents;
   }
 
   render() {
-    this.pushEvents();
     return (
       <ul>
-        {/* {this.state.persons.map(person => <li>{person.name}</li>)} */}
+        {this.pushEvents().map((date, i) => <li key={i}>{date}</li>)}
       </ul>
     )
   }
