@@ -1,35 +1,40 @@
-import React from 'react';
+// import React from 'react';
 import axios from 'axios';
 
-export default class Github extends React.Component {
-  state = {
-    responseData: []
-  }
+export default axios.create({
+  baseURL: `https://api.github.com/users/`
+});
 
-  componentDidMount() {
-    let user = 'headhuntar';
-    axios.get(`https://api.github.com/users/` + user + "/events")
-      .then(res => {
-        const responseData = res.data;
-        this.setState({ responseData });
-      })
-  }
+// old component style
+// export default class Github extends React.Component {
+//   state = {
+//     responseData: []
+//   }
 
-  pushEvents = () => {
-    let pushEvents = [];
-    this.state.responseData.forEach(event => {
-      if (event.type === "PushEvent") {
-        pushEvents.push(new Date(event.created_at).toDateString());
-      }
-    });
-    return pushEvents;
-  }
+//   componentDidMount() {
+//     let user = 'headhuntar';
+//     axios.get(`https://api.github.com/users/` + user + "/events")
+//       .then(res => {
+//         const responseData = res.data;
+//         this.setState({ responseData });
+//       })
+//   }
 
-  render() {
-    return (
-      <ul>
-        {this.pushEvents().map((date, i) => <li key={i}>{date}</li>)}
-      </ul>
-    )
-  }
-}
+//   pushEvents = () => {
+//     let pushEvents = [];
+//     this.state.responseData.forEach(event => {
+//       if (event.type === "PushEvent") {
+//         pushEvents.push(new Date(event.created_at).toDateString());
+//       }
+//     });
+//     return pushEvents;
+//   }
+
+//   render() {
+//     return (
+//       <ul>
+//         {this.pushEvents().map((date, i) => <li key={i}>{date}</li>)}
+//       </ul>
+//     )
+//   }
+// }
