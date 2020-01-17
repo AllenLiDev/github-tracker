@@ -3,6 +3,7 @@ import SearchBar from './SearchBar';
 import Github from '../apis/Github';
 import EventList from './EventList';
 import EventChart from './EventChart';
+import RepoList from './RepoList';
 
 export default class App extends React.Component {
   state = { userData: [] };
@@ -22,6 +23,7 @@ export default class App extends React.Component {
   userEventTypes = () => {
     let map = new Map();
     let results = [];
+    let regex = /event/gi;
     for (const { type } of this.state.userData) {
       if (map.has(type)) {
         map.set(type, map.get(type) + 1);
@@ -30,8 +32,27 @@ export default class App extends React.Component {
       }
     }
     map.forEach((value, key) => {
+      results.push({ name: key.replace(regex, ''), uv: value });
+    });
+    return results;
+  }
+
+  userTopRepos = () => {
+    let map = new Map();
+    let results = [];
+    for (const { repo } of this.state.userData) {
+      if (map.has(repo)) {
+        map.set(repo, map.get(repo) + 1);
+      } else {
+        map.set(repo, 1);
+      }
+    }
+    map.forEach((value, key) => {
       results.push({ name: key, uv: value });
     });
+    results.sort((a, b) => {
+      return b.uv - a.uv
+    })
     return results;
   }
 
@@ -41,6 +62,7 @@ export default class App extends React.Component {
         <SearchBar onFormSubmit={this.onTermSubmit} />
         <EventList data={this.state.userData} />
         <EventChart data={this.userEventTypes()} />
+        <RepoList data={this.userTopRepos()} />
       </div>
     );
   }
