@@ -79,9 +79,13 @@ export default class App extends React.Component {
         <>
           <div className="row">
             <div className="column">
-              <div className="ui center aligned huge header">
-                {this.state.user} GitHub <i className="github icon" />Activity In Last 90 Days
-            </div>
+              <h2 className="ui header">
+                <i className="github icon" />
+                <div className="content">
+                  {this.state.user}'s
+                    <div className="sub header">GitHub Activity Past 90 Days</div>
+                </div>
+              </h2>
             </div>
           </div>
           <div className="row">
@@ -119,7 +123,7 @@ export default class App extends React.Component {
           <div className="column">
             <div className="ui center aligned huge header">
               Enter a GitHub <i className="github icon" />Username
-        </div>
+            </div>
           </div>
         </div>;
     }
@@ -132,6 +136,15 @@ export default class App extends React.Component {
           </div>
         </div>
         {content}
+        <div className="row">
+          <div className="column">
+            <div className="ui right aligned basic segment">
+              <a href="https://github.com/headhuntar">
+                Created by Allen Li 2020.
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
