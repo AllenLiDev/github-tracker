@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import github from '../apis/Github.js';
+import gitHub from './Github';
 import EventList from './EventList';
 import EventChart from './EventChart';
 import RepoList from './RepoList';
@@ -10,7 +10,7 @@ export default class App extends React.Component {
   state = { user: [], userData: [] };
 
   onTermSubmit = (user) => {
-    github.get('users/' + user + '/events')
+    gitHub.get('users/' + user + '/events')
       .then(res => {
         let filteredData = [];
         const data = res.data;
