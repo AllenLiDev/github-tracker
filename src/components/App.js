@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from './SearchBar';
-import github from '../apis/Github';
+import github from '../apis/Github.js';
 import EventList from './EventList';
 import EventChart from './EventChart';
 import RepoList from './RepoList';
