@@ -4,7 +4,7 @@ export default class SearchBar extends React.Component {
   state = { term: '' };
 
   onInputChanged = (e) => {
-    this.setState( {term: e.target.value});
+    this.setState({ term: e.target.value });
   }
 
   onFormSubmit = (e) => {
@@ -14,10 +14,10 @@ export default class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className='search-bar ui segment'>
+      <div className='search-bar ui basic segment'>
         <form className="ui form" onSubmit={this.onFormSubmit}>
           <div className="field">
-            <label>Github Username</label>
+            <label>Github <i className="github icon" />Username</label>
             <input type="text" value={this.state.term} onChange={this.onInputChanged} />
           </div>
         </form>
