@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/github-tracker/static/js/main.b800312b.chunk.js",
-    "main.js.map": "/github-tracker/static/js/main.b800312b.chunk.js.map",
+    "main.js": "/github-tracker/static/js/main.20a637ae.chunk.js",
+    "main.js.map": "/github-tracker/static/js/main.20a637ae.chunk.js.map",
     "runtime-main.js": "/github-tracker/static/js/runtime-main.98f58f19.js",
     "runtime-main.js.map": "/github-tracker/static/js/runtime-main.98f58f19.js.map",
     "static/js/2.11aa1f17.chunk.js": "/github-tracker/static/js/2.11aa1f17.chunk.js",
     "static/js/2.11aa1f17.chunk.js.map": "/github-tracker/static/js/2.11aa1f17.chunk.js.map",
     "index.html": "/github-tracker/index.html",
-    "precache-manifest.33b28e7ec99ae1f433443cf5dda22339.js": "/github-tracker/precache-manifest.33b28e7ec99ae1f433443cf5dda22339.js",
+    "precache-manifest.68002f99b3f71cbdb222c7cfd33cb16e.js": "/github-tracker/precache-manifest.68002f99b3f71cbdb222c7cfd33cb16e.js",
     "service-worker.js": "/github-tracker/service-worker.js",
     "static/js/2.11aa1f17.chunk.js.LICENSE": "/github-tracker/static/js/2.11aa1f17.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.98f58f19.js",
     "static/js/2.11aa1f17.chunk.js",
-    "static/js/main.b800312b.chunk.js"
+    "static/js/main.20a637ae.chunk.js"
   ]
 }
