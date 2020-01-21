@@ -129,7 +129,7 @@ export default class App extends React.Component {
     }
 
     return (
-      <div className="ui grid container">
+      <div className="ui two wide computer grid container">
         <div className="row">
           <div className="column">
             <SearchBar onFormSubmit={this.onTermSubmit} />
