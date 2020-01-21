@@ -10,7 +10,7 @@ export default class App extends React.Component {
   state = { user: [], userData: [] };
 
   onTermSubmit = (user) => {
-    gitHub.get('users/' + user + '/events')
+    gitHub.get('users/' + user + '/events?per_page=100')
       .then(res => {
         let filteredData = [];
         const data = res.data;
